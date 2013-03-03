@@ -90,12 +90,16 @@ def readmill_uri(path, u)
 end
 
 def send_tweet(user, message)
-	twitter = Twitter::Client.new(
-	  :oauth_token => user.twitter_token,
-	  :oauth_token_secret => user.twitter_secret
-	)
-	#twitter.update(message)
-	puts message
+	begin 
+		twitter = Twitter::Client.new(
+		  :oauth_token => user.twitter_token,
+		  :oauth_token_secret => user.twitter_secret
+		)
+		#twitter.update(message)
+		puts message
+	rescue
+		puts "Error tweeting for user #{user.id}"
+	end
 end
 
 def send_updates
