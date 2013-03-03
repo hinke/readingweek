@@ -4,7 +4,6 @@ require 'sinatra'
 require 'json'
 require 'rest_client'
 require 'data_mapper'
-require 'active_support'
 require 'nokogiri'
 require "sinatra/cookies"
 require 'omniauth'
