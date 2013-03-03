@@ -7,6 +7,7 @@ gem 'nokogiri'
 gem 'clockwork'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'sinatra-contrib'
 
 group :development do
   gem 'mysql2'
