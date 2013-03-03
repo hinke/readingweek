@@ -62,12 +62,16 @@ def compile_stats(user)
 	readings = get_readings(user)
 	time_spent = 0
 
+	return nil if readings.size < 1
+
 	readings.each do |r|
 		periods = get_periods(r['reading']['id'], user)
 		periods.each {|p| time_spent+=p['period']['duration'].to_i/60}
 	end
 	hours = time_spent/60
 	minutes = time_spent % 60
+
+	return nil if time_spent == 0
 
 	highlights = get_highlights(user)
 
@@ -79,7 +83,6 @@ def compile_stats(user)
 
 	me = get_me(user)
 	text = "#{text} Follow me at https://readmill.com/#{me['username']}"
-
 end
 
 def readmill_uri(path, u)
@@ -96,8 +99,9 @@ def send_tweet(user, message)
 		  :oauth_token => user.twitter_token,
 		  :oauth_token_secret => user.twitter_secret
 		)
-		#twitter.update(message)
+		twitter.update(message)
 		puts message
+		puts "END OF MESSAGE"
 	rescue
 		puts "Error tweeting for user #{user.id}"
 	end
@@ -105,7 +109,8 @@ end
 
 def send_updates
 	User.all.each do |u|
-		send_tweet(u, compile_stats(u))
+		text = compile_stats(u)
+		send_tweet(u, text) unless text.nil?
 		Kernel.sleep(10)
 	end
 end
