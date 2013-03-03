@@ -9,7 +9,7 @@ require 'nokogiri'
 require "sinatra/cookies"
 require 'omniauth'
 require 'omniauth-twitter'
-require 'config.rb'
+require './config.rb'
 
 use Rack::Session::Cookie
 
