@@ -5,6 +5,7 @@ $:.unshift File.dirname(__FILE__)
 #include Clockwork
 
 #every(1.day, 'send updates', :at => '19:00', :tz => 'UTC', :if => lambda { |t| t.sunday? }) { send_updates }
+#every(2.minutes, 'send updates', :if => lambda { |t| t.sunday? }) { send_updates }
 
 require 'config.rb'
 require 'twitter'
@@ -30,28 +31,28 @@ end
 
 def get_periods(reading_id, u)
   uri = readmill_uri("/readings/#{reading_id}/periods?from=#{seven_days_ago}&order=started_at", u)
-  puts uri
+  #puts uri
   response = JSON.parse(RestClient.get(uri))
   return response['items']
 end
 
 def get_readings(user)
   uri = readmill_uri("/users/#{user.readmill_id}/readings?order=touched_at&states=reading,finished,abandoned&from=#{seven_days_ago}", user)
-  puts uri
+  #puts uri
   response = JSON.parse(RestClient.get(uri))
   return response['items']
 end
 
 def get_highlights(user)
   uri = readmill_uri("/users/#{user.readmill_id}/highlights?order=highlighted_at&from=#{seven_days_ago}&count=100", user)
-  puts uri
+  #puts uri
   response = JSON.parse(RestClient.get(uri))
   return response['items']
 end
 
 def get_me(user)
   uri = readmill_uri("/me.json", user)
-  puts uri
+  #puts uri
   response = JSON.parse(RestClient.get(uri))
   return response['user']
 end
@@ -105,6 +106,7 @@ end
 def send_updates
 	User.all.each do |u|
 		send_tweet(u, compile_stats(u))
+		Kernel.sleep(10)
 	end
 end
 
