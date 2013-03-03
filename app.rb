@@ -86,6 +86,10 @@ get '/' do
   erb :index
 end
 
+get '/auth/failure' do
+  redirect '/'
+end
+
 get('/fonts/:filename') { send_file("./fonts/#{params[:filename]}") }
 get('/images/:filename') { send_file("./images/#{params[:filename]}") }
 get('/javascripts/:filename') { send_file("./javascripts/#{params[:filename]}") }
