@@ -42,13 +42,11 @@ body {
   width: 890px;
   margin: 0 auto;
   text-align: center;
-  margin-top: 150px;
-}
-@media screen and (max-width: 500px) {
-  .wrap {
-    width: 95%;
-    margin: 20px auto;
-  }
+  position: absolute;
+  left: 50%;
+  margin-left: -445px;
+  top: 50%;
+  margin-top: -257px;
 }
 
 .sign-up {
@@ -57,40 +55,16 @@ body {
   text-align: center;
   margin-right: 90px;
 }
-@media screen and (max-width: 500px) {
-  .sign-up {
-    width: 100%;
-    margin: 0;
-  }
-}
 
 .tweets {
   width: 500px;
   float: left;
   text-align: center;
-  padding-top: 60px;
-}
-@media screen and (max-width: 500px) {
-  .tweets {
-    width: 100%;
-    margin: 0;
-    padding-top: 40px;
-  }
+  padding-top: 30px;
 }
 
 .twitter-tweet {
   margin-bottom: 30px !important;
-}
-@media screen and (max-width: 500px) {
-  .twitter-tweet {
-    margin: 0 auto 10px !important;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .rosie {
-    width: 150px;
-  }
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -138,7 +112,7 @@ h3 {
 }
 
 .twitter .wrap {
-  margin-top: 122px;
+  margin-top: -250px;
 }
 .twitter .sign-up {
   width: 440px;
@@ -151,7 +125,7 @@ h3 {
 }
 
 .done .wrap {
-  margin-top: 122px;
+  margin-top: -220px;
 }
 .done .sign-up {
   width: 300px;
