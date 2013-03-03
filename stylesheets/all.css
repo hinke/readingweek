@@ -1,1 +1,161 @@
-@font-face{font-family:ScalaWebPro;src:url("../fonts/ScalaWebPro.eot")}@font-face{font-family:ScalaWebPro;src:url("../fonts/ScalaWebPro.woff") format("woff")}@font-face{font-family:ScalaSansScWebPro;src:url("../fonts/ScalaSansScWebPro.eot")}@font-face{font-family:ScalaSansScWebPro;src:url("../fonts/ScalaSansScWebPro.woff") format("woff")}body{background:#F2F1E6;font-family:'georgia';-webkit-font-smoothing:antialiased;line-height:1.2}.group:after{content:"";display:table;clear:both}.wrap{border-radius:3px;background:#F2F1E6;width:890px;margin:0 auto;text-align:center;margin-top:150px}@media screen and (max-width: 500px){.wrap{width:95%;margin:20px auto}}.sign-up{width:300px;float:left;text-align:center;margin-right:90px}@media screen and (max-width: 500px){.sign-up{width:100%;margin:0}}.tweets{width:500px;float:left;text-align:center;padding-top:60px}@media screen and (max-width: 500px){.tweets{width:100%;margin:0;padding-top:40px}}.twitter-tweet{margin-bottom:30px !important}@media screen and (max-width: 500px){.twitter-tweet{margin:0 auto 10px !important}}@media screen and (max-width: 500px){.rosie{width:150px}}h1,h2,h3,h4,h5,h6,p{font-weight:normal}h1{font-family:ScalaWebPro,serif;color:#052336;font-size:42px;margin-top:20px;margin-bottom:0}h3{font-family:ScalaSansScWebPro,sans-serif;color:#969C90;font-size:17px;margin:0;margin-bottom:20px}.btn{font-family:ScalaSansScWebPro,sans-serif;background:#70B32D;border-radius:3px;color:#fff;text-decoration:none;padding:15px 80px;display:inline-block}.btn:hover{background-color:#64A826}.btn:active{position:relative;top:1px}
+@charset "UTF-8";
+/* first for IE 4–8 */
+@font-face {
+  font-family: ScalaWebPro;
+  src: url("../fonts/ScalaWebPro.eot");
+}
+
+/* then for WOFF-capable browsers */
+@font-face {
+  font-family: ScalaWebPro;
+  src: url("../fonts/ScalaWebPro.woff") format("woff");
+}
+
+/* first for IE 4–8 */
+@font-face {
+  font-family: ScalaSansScWebPro;
+  src: url("../fonts/ScalaSansScWebPro.eot");
+}
+
+/* then for WOFF-capable browsers */
+@font-face {
+  font-family: ScalaSansScWebPro;
+  src: url("../fonts/ScalaSansScWebPro.woff") format("woff");
+}
+
+body {
+  background: #F2F1E6;
+  font-family: 'georgia';
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.2;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.wrap {
+  border-radius: 3px;
+  background: #F2F1E6;
+  width: 890px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 150px;
+}
+@media screen and (max-width: 500px) {
+  .wrap {
+    width: 95%;
+    margin: 20px auto;
+  }
+}
+
+.sign-up {
+  width: 300px;
+  float: left;
+  text-align: center;
+  margin-right: 90px;
+}
+@media screen and (max-width: 500px) {
+  .sign-up {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.tweets {
+  width: 500px;
+  float: left;
+  text-align: center;
+  padding-top: 60px;
+}
+@media screen and (max-width: 500px) {
+  .tweets {
+    width: 100%;
+    margin: 0;
+    padding-top: 40px;
+  }
+}
+
+.twitter-tweet {
+  margin-bottom: 30px !important;
+}
+@media screen and (max-width: 500px) {
+  .twitter-tweet {
+    margin: 0 auto 10px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .rosie {
+    width: 150px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: normal;
+}
+
+h1 {
+  font-family: ScalaWebPro, serif;
+  color: #052336;
+  font-size: 42px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: #052336;
+  margin: 0 auto 20px;
+}
+
+h3 {
+  font-family: ScalaSansScWebPro, sans-serif;
+  color: #969C90;
+  font-size: 17px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.btn {
+  font-family: ScalaSansScWebPro, sans-serif;
+  background: #70B32D;
+  border-radius: 3px;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 80px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #64A826;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+
+.twitter .wrap {
+  margin-top: 122px;
+}
+.twitter .sign-up {
+  width: 440px;
+  text-align: center;
+  margin: 0 auto;
+  float: none;
+}
+.twitter .btn {
+  padding: 15px 60px;
+}
+
+.done .wrap {
+  margin-top: 122px;
+}
+.done .sign-up {
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  float: none;
+}
