@@ -76,4 +76,7 @@ get '/' do
   erb :index
 end
 
-get('/static/:filename') { send_file("./static/#{params[:filename]}") }
+get('/fonts/:filename') { send_file("./fonts/#{params[:filename]}") }
+get('/images/:filename') { send_file("./images/#{params[:filename]}") }
+get('/javascripts/:filename') { send_file("./javascripts/#{params[:filename]}") }
+get('/stylesheets/:filename') { send_file("./stylesheets/#{params[:filename]}") }

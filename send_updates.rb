@@ -3,10 +3,8 @@
 $:.unshift File.dirname(__FILE__)
 
 #include Clockwork
-#every(30.seconds, 'Fetch messages') { fetch_messages }
 
-#every(1.week, 'send updates', :at => '00:00') { send_updates}
-
+#every(1.day, 'send updates', :at => '19:00', :tz => 'UTC', :if => lambda { |t| t.sunday? }) { send_updates }
 
 require 'config.rb'
 require 'twitter'
@@ -70,11 +68,11 @@ def compile_stats(user)
 	hours = time_spent/60
 	minutes = time_spent % 60
 
-	time = "#{hours} hours" if hours > 0
-	time = time.nil? ? "#{minutes} minutes" : " and #{minutes} minutes"
-	text = "I've spent #{time} in #{readings.size} book#{'s' if readings.size > 1} this week."
-
 	highlights = get_highlights(user)
+
+	time = "#{hours} hour#{'s' if hours > 1}" if hours > 0
+	time = time.nil? ? "#{minutes} minutes" : "#{time} and #{minutes} minutes" if minutes > 0
+	text = "I've spent #{time} in #{readings.size} book#{'s' if readings.size > 1} this week."
 
 	text = "#{text} And made #{highlights.size} highlight#{'s' if highlights.size > 1}." if highlights.size > 0
 
@@ -105,3 +103,5 @@ def send_updates
 		send_tweet(u, compile_stats(u))
 	end
 end
+
+send_updates
