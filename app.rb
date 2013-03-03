@@ -18,7 +18,8 @@ end
 
 set :readmill_client_id, "e2953a5b47cc8e583f1cedcd5bfdf15a"
 set :readmill_client_secret, "c7ad27561a5df01b105227f482d29bc7"
-set :readmill_redirect, "http://127.0.0.1:9393/callback/readmill"
+#set :readmill_redirect, "http://127.0.0.1:9393/callback/readmill"
+set :readmill_redirect, "http://rosie-says.herokuapp.com/callback/readmill"
 
 get '/auth/readmill' do
   redirect "http://readmill.com/oauth/authorize?response_type=code&client_id=#{settings.readmill_client_id}&redirect_uri=#{settings.readmill_redirect}&scope=non-expiring"
