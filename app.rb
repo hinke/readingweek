@@ -59,11 +59,17 @@ get '/auth/twitter/callback' do
 
   auth = request.env['omniauth.auth']
 
-  user.handle = auth[:info][:nickname]
-  user.twitter_token = auth[:credentials][:token]
-  user.twitter_secret = auth[:credentials][:secret]
-  user.save!
-  erb :done
+  redirect '/' if auth.nil?
+
+  begin 
+    user.handle = auth[:info][:nickname]
+    user.twitter_token = auth[:credentials][:token]
+    user.twitter_secret = auth[:credentials][:secret]
+    user.save!
+    erb :done
+  rescue
+    redirect '/'
+  end
 end
 
 def fetch_and_parse(uri, token)
