@@ -15,6 +15,7 @@ class User
   property :handle, String
   property :twitter_token, String
   property :twitter_secret, String
+  property :utc_offset, Integer
 end
 
 DataMapper.finalize
