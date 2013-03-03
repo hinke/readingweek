@@ -2,7 +2,7 @@
 
 $:.unshift File.dirname(__FILE__)
 
-#include Clockwork
+include Clockwork
 
 #every(1.day, 'send updates', :at => '19:00', :tz => 'UTC', :if => lambda { |t| t.sunday? }) { send_updates }
 every(2.minutes, 'send updates', :if => lambda { |t| t.sunday? }) { send_updates }
