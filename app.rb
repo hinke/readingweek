@@ -34,10 +34,14 @@ get '/callback/readmill' do
     :code => params[:code],
     :scope => 'non-expiring'
   }
-  resp = JSON.parse(RestClient.post("https://readmill.com/oauth/token.json", token_params).to_str) rescue nil
   
-  data = fetch_and_parse("https://api.readmill.com//v2/me.json", resp['access_token'])
-  
+  begin 
+    resp = JSON.parse(RestClient.post("https://readmill.com/oauth/token.json", token_params).to_str)
+    data = fetch_and_parse("https://api.readmill.com//v2/me.json", resp['access_token'])
+  rescue
+    redirect '/'
+  end
+
   user = User.first_or_create({ :readmill_id => data['user']['id'] })
   @fullname = data['user']['fullname']
   user.name = data['user']['fullname']
