@@ -36,6 +36,11 @@ body {
   clear: both;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .wrap {
   border-radius: 3px;
   background: #F2F1E6;
@@ -48,12 +53,29 @@ body {
   top: 50%;
   margin-top: -257px;
 }
+@media screen and (max-width: 500px) {
+  .wrap {
+    width: 90%;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+  }
+}
 
 .sign-up {
   width: 300px;
   float: left;
   text-align: center;
   margin-right: 90px;
+}
+@media screen and (max-width: 500px) {
+  .sign-up {
+    width: 100%;
+    float: none;
+    margin-right: 0;
+    margin-top: 30px;
+  }
 }
 
 .tweets {
@@ -62,9 +84,27 @@ body {
   text-align: center;
   padding-top: 30px;
 }
+@media screen and (max-width: 500px) {
+  .tweets {
+    width: 100%;
+    float: none;
+    margin-bottom: 40px;
+  }
+}
 
 .twitter-tweet {
   margin-bottom: 30px !important;
+}
+@media screen and (max-width: 500px) {
+  .twitter-tweet {
+    margin-bottom: 10px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .rosie {
+    width: 70%;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -114,11 +154,28 @@ h3 {
 .twitter .wrap {
   margin-top: -250px;
 }
+@media screen and (max-width: 500px) {
+  .twitter .wrap {
+    width: 90%;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+  }
+}
 .twitter .sign-up {
   width: 440px;
   text-align: center;
   margin: 0 auto;
   float: none;
+}
+@media screen and (max-width: 500px) {
+  .twitter .sign-up {
+    width: 100%;
+    float: none;
+    margin-right: 0;
+    margin-top: 30px;
+  }
 }
 .twitter .btn {
   padding: 15px 60px;
@@ -127,9 +184,26 @@ h3 {
 .done .wrap {
   margin-top: -220px;
 }
+@media screen and (max-width: 500px) {
+  .done .wrap {
+    width: 90%;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+  }
+}
 .done .sign-up {
   width: 300px;
   text-align: center;
   margin: 0 auto;
   float: none;
+}
+@media screen and (max-width: 500px) {
+  .done .sign-up {
+    width: 100%;
+    float: none;
+    margin-right: 0;
+    margin-top: 30px;
+  }
 }
