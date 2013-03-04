@@ -114,5 +114,3 @@ def send_updates
 		Kernel.sleep(10)
 	end
 end
-
-send_updates
