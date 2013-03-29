@@ -111,6 +111,6 @@ def send_updates
 	User.all.each do |u|
 		text = compile_stats(u)
 		send_tweet(u, text) unless text.nil?
-		Kernel.sleep(10)
+		Kernel.sleep(1)
 	end
 end
