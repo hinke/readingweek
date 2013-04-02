@@ -109,8 +109,12 @@ end
 
 def send_updates
 	User.all.each do |u|
-		text = compile_stats(u)
-		send_tweet(u, text) unless text.nil?
+		begin
+			text = compile_stats(u)
+			send_tweet(u, text) unless text.nil?
+		rescue
+			# no op
+		end
 		Kernel.sleep(1)
 	end
 end
