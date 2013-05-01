@@ -76,13 +76,13 @@ def compile_stats(user)
 	highlights = get_highlights(user)
 
 	time = "#{hours} hour#{'s' if hours > 1}" if hours > 0
-	time = time.nil? ? "#{minutes} minutes" : "#{time} and #{minutes} minutes" if minutes > 0
+	time = time.nil? ? "#{minutes} minutes" : "#{time}, #{minutes} minutes" if minutes > 0
 	text = "I've spent #{time} in #{readings.size} book#{'s' if readings.size > 1} this week."
 
 	text = "#{text} And made #{highlights.size} highlight#{'s' if highlights.size > 1}." if highlights.size > 0
 
 	me = get_me(user)
-	text = "#{text} Follow me at https://readmill.com/#{me['username']}"
+	text = "#{text} Follow me at https://readmill.com/#{me['username']} via http://bit.ly/13MSmc)"
 end
 
 def readmill_uri(path, u)
