@@ -82,7 +82,9 @@ def compile_stats(user)
 	text = "#{text} And made #{highlights.size} highlight#{'s' if highlights.size > 1}." if highlights.size > 0
 
 	me = get_me(user)
-	text = "#{text} Follow me at https://readmill.com/#{me['username']} via http://bit.ly/13MSmc)"
+	text = "#{text} Follow me at https://readmill.com/#{me['username']}"
+	text = "#{text} via http://bit.ly/13MSmcV" if text.size < 110
+	return text
 end
 
 def readmill_uri(path, u)
