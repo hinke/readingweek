@@ -75,8 +75,8 @@ def compile_stats(user)
 
 	highlights = get_highlights(user)
 
-	time = "#{hours} hour#{'s' if hours > 1}" if hours > 0
-	time = time.nil? ? "#{minutes} minutes" : "#{time}, #{minutes} minutes" if minutes > 0
+	time = "#{hours}h" if hours > 0
+	time = time.nil? ? "#{minutes} minutes" : "#{time}, #{minutes}m" if minutes > 0
 	text = "I've spent #{time} in #{readings.size} book#{'s' if readings.size > 1} this week."
 
 	text = "#{text} And made #{highlights.size} highlight#{'s' if highlights.size > 1}." if highlights.size > 0
